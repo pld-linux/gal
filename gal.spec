@@ -41,8 +41,8 @@ might want to use these widgets.
 %description -l es
 Éstas son las Bibliotecas de Aplicaciones de GNOME (GAL). Este módulo
 contiene unas funciones provenientes de Gnumeric y Evolution. La
-intención es reutilizar estos componentes entre las varias aplicaciones
-GNOME grandes que quieran utilizarlos.
+intención es reutilizar estos componentes entre las varias
+aplicaciones GNOME grandes que quieran utilizarlos.
 
 %description -l pl
 Pakiet zawiera funkcje pochodz±ce z programów Gnumeric i Evolution.
@@ -86,7 +86,8 @@ Obsoletes:	libgal19-devel
 Header files and development documentation for the gal libraries.
 
 %description devel -l es
-Ficheros de cabecera y documentación de desarrollo para las bibliotecas gal.
+Ficheros de cabecera y documentación de desarrollo para las
+bibliotecas gal.
 
 %description devel -l pl
 Pliki nag³ówkowe i dokumentacja do bibliotek gal.
@@ -158,8 +159,8 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/lib*.{la,a}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files -f %{name}-%{version}.lang
 %defattr(644,root,root,755)
