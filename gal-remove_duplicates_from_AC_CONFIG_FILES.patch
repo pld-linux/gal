@@ -1,0 +1,11 @@
+diff -Nru gal-0.19.3/configure.in gal-0.19.3-new/configure.in
+--- gal-0.19.3/configure.in	Thu Jun 20 05:19:40 2002
++++ gal-0.19.3-new/configure.in	Mon Oct 14 18:13:55 2002
+@@ -354,7 +354,6 @@
+ gal/e-text/Makefile
+ gal/e-paned/Makefile
+ gal/e-table/Makefile
+-gal/shortcut-bar/Makefile
+ gal/menus/Makefile
+ gal/shortcut-bar/Makefile
+ tests/Makefile
