@@ -1,7 +1,7 @@
-Summary:	the G App Libs (GAL)
+Summary:	GNOME Application Libs (GAL)
 Name:		gal
-Version:	0.3
-Release:	2
+Version:	0.4.1
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -10,34 +10,37 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.t
 Patch0:		%{name}-no_version.patch
 BuildRequires:	automake
 BuildRequires:	gettext-devel
+BuildRequires:	gnome-print-devel >= 0.22
+BuildRequires:	gnome-vfs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libglade-devel >= 0.13
+BuildRequires:	libunicode-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
 
 %description
-This the G App Libs (GAL). This module contains some library functions
+This the GNOME Application Libs (GAL). This module contains some library functions
 that came from Gnumeric and Evolution. The idea is to reuse those
 widgets across various larger GNOME applications that might want to
 use these widgets.
 
 %package devel
-Summary:	Gtk+ header files and development documentation
+Summary:	gal header files and development documentation
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
-Header files and development documentation for the Gtk+ libraries.
+Header files and development documentation for the gal libraries.
 
 %description -l pl devel
-Pliki nag³ówkowe i dokumentacja do bibliotek Gtk+.
+Pliki nag³ówkowe i dokumentacja do bibliotek gal.
 
 %package static
-Summary:	Gtk+ static libraries
+Summary:	gal static libraries
 Summary(pl):	Biblioteki statyczne Gtk+
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
@@ -45,7 +48,7 @@ Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
-Gtk+ static libraries.
+Gal static libraries.
 
 %description -l pl static
 Biblioteki statyczne gal.
