@@ -1,0 +1,11 @@
+--- gal-0.9.1/configure.in.orig	Tue Jul 17 13:50:17 2001
++++ gal-0.9.1/configure.in	Wed Jul 18 03:42:30 2001
+@@ -64,7 +64,7 @@
+ AC_SUBST(LDFLAGS)
+ 
+ ALL_LINGUAS="az ca cs da de en_GB es fi fr gl hu it ja ko lt nn no pl pt_BR ro ru sk sv ta tr uk"
+-AM_GNOME_GETTEXT
++AM_GNU_GETTEXT
+ 
+ gnomelocaledir='${prefix}/${DATADIRNAME}/locale'
+ AC_SUBST(gnomelocaledir)

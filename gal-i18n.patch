@@ -1,0 +1,101 @@
+diff -rup --exclude=intl --exclude=po /home/cyba/gcvs/gal/ChangeLog gal/ChangeLog
+--- /home/cyba/gcvs/gal/ChangeLog	Thu Aug 23 18:28:03 2001
++++ gal/ChangeLog	Thu Aug 23 20:40:11 2001
+@@ -1,1 +1,9 @@
++2001-08-23  Zbigniew Chyla  <cyba@gnome.pl>
++
++	Fixes some Evolution bugs.
++
++	* gal/widgets/e-categories-master-list-combo.c (ecmlc_ecml_changed):
++	Convert categories to GTK+ locale before passing them to
++	gtk_combo_set_popdown_strings.
++
+ 
+diff -rup --exclude=intl --exclude=po /home/cyba/gcvs/gal/gal/widgets/e-categories-master-list-combo.c gal/gal/widgets/e-categories-master-list-combo.c
+--- /home/cyba/gcvs/gal/gal/widgets/e-categories-master-list-combo.c	Wed Jun 27 05:12:17 2001
++++ gal/gal/widgets/e-categories-master-list-combo.c	Thu Aug 23 23:55:01 2001
+@@ -14,6 +14,7 @@
+ 
+ #include <gal/util/e-i18n.h>
+ #include <gal/util/e-util.h>
++#include <gal/widgets/e-unicode.h>
+ #include <gtk/gtksignal.h>
+ 
+ struct ECategoriesMasterListComboPriv {
+@@ -38,12 +39,17 @@ ecmlc_ecml_changed (ECategoriesMasterLis
+ 	int i;
+ 	GList *strings = NULL;
+ 	for (i = 0; i < count; i++) {
+-		const char *category = e_categories_master_list_nth (ecml, i);
+-		strings = g_list_prepend (strings, (gpointer) category);
++		char *category;
++
++		category = e_utf8_to_gtk_string (
++			GTK_WIDGET (ecmlc),
++			e_categories_master_list_nth (ecml, i));
++		strings = g_list_prepend (strings, category);
+ 	}
+ 	strings = g_list_reverse (strings);
+-	strings = g_list_prepend (strings, "");
++	strings = g_list_prepend (strings, g_strdup (""));
+ 	gtk_combo_set_popdown_strings (GTK_COMBO (ecmlc), strings);
++	g_list_foreach (strings, (GFunc) g_free, NULL);
+ 	g_list_free (strings);
+ }
+ 
+diff -rup --exclude=intl --exclude=po /home/cyba/gcvs/gal/gal/e-table/ChangeLog gal/gal/e-table/ChangeLog
+--- /home/cyba/gcvs/gal/gal/e-table/ChangeLog	Sat Aug 25 08:58:28 2001
++++ gal/gal/e-table/ChangeLog	Sat Aug 25 16:01:45 2001
+@@ -1,1 +1,7 @@
++2001-08-25  Zbigniew Chyla  <cyba@gnome.pl>
++
++	* e-table-group-container.c (compute_text):
++	Convert UTF-8 strings to locale's encoding before putting them in
++	canvas item.
++
+ 
+diff -rup --exclude=intl --exclude=po /home/cyba/gcvs/gal/gal/e-table/e-table-group-container.c gal/gal/e-table/e-table-group-container.c
+--- /home/cyba/gcvs/gal/gal/e-table/e-table-group-container.c	Fri Aug 24 21:23:07 2001
++++ gal/gal/e-table/e-table-group-container.c	Sat Aug 25 15:55:02 2001
+@@ -20,6 +20,7 @@
+ #include "gal/util/e-util.h"
+ #include "gal/widgets/e-canvas.h"
+ #include "gal/widgets/e-canvas-utils.h"
++#include "gal/widgets/e-unicode.h"
+ #include "gal/e-text/e-text.h"
+ #include "e-table-defines.h"
+ 
+@@ -331,20 +332,27 @@ etgc_unrealize (GnomeCanvasItem *item)
+ static void
+ compute_text (ETableGroupContainer *etgc, ETableGroupContainerChildNode *child_node)
+ {
+-	gchar *text;
+-	if (etgc->ecol->text)
++	gchar *text, *s1, *s2;
++
++	if (etgc->ecol->text) {
++		s1 = e_utf8_to_locale_string (etgc->ecol->text);
++		s2 = e_utf8_to_locale_string (child_node->string);
+ 		text = g_strdup_printf ((child_node->count == 1)
+ 					? _("%s : %s (%d item)")
+ 					: _("%s : %s (%d items)"),
+-					etgc->ecol->text,
+-					child_node->string,
++					s1, s2,
+ 					(gint) child_node->count);
+-	else
++		g_free (s1);
++		g_free (s2);
++	} else {
++		s1 = e_utf8_to_locale_string (child_node->string);
+ 		text = g_strdup_printf ((child_node->count == 1)
+ 					? _("%s (%d item)")
+ 					: _("%s (%d items)"),
+-					child_node->string,
++					s1,
+ 					(gint) child_node->count);
++		g_free (s1);
++	}
+ 	gnome_canvas_item_set (child_node->text, 
+ 			       "text", text,
+ 			       NULL);
