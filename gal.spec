@@ -1,8 +1,8 @@
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Name:		gal
-Version:	0.7
-Release:	3
+Version:	0.8
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -19,6 +19,7 @@ BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	gnome-vfs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libglade-devel >= 0.13
+BuildRequires:	libtool
 BuildRequires:	libunicode-devel
 BuildRequires:	iconv
 BuildRequires:	libxml-devel
@@ -72,9 +73,11 @@ Biblioteki statyczne gal.
 %patch1 -p1
 
 %build
+libtoolize --copy --force
 gettextize --copy --force
 automake -a -c
 aclocal -I %{_aclocaldir}/gnome
+rm -f missing
 autoconf
 %configure \
 	--enable-static
