@@ -18,6 +18,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.4.0
+BuildRequires:	gnome-keyring-devel
 BuildRequires:	gnome-vfs2-devel >= 2.5.0
 BuildRequires:	gtk+2-devel >= 2.3.1
 BuildRequires:	gtk-doc
