@@ -25,6 +25,7 @@ BuildRequires:	libglade2-devel
 BuildRequires:	libgnomecanvas-devel
 BuildRequires:	libgnomeprint-devel >= 2.2.0
 BuildRequires:	libgnomeprintui-devel >= 2.2.1
+BuildRequires:	libgnomeui-devel >= 2.2.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
