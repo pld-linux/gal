@@ -6,23 +6,22 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	2.1.5
+Version:	2.1.6
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	6a6f4d76d3b06c56ca01b8d5a09d9431
+# Source0-md5:	8121fd66132846d643b13720ade3c05b
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
+Patch0:		%{name}-locale-names.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.4.0
-BuildRequires:	gnome-keyring-devel
-BuildRequires:	gnome-vfs2-devel >= 2.5.6
 BuildRequires:	gtk+2-devel >= 2.3.1
-BuildRequires:	gtk-doc
-BuildRequires:	intltool
+BuildRequires:	gtk-doc >= 1.0
+BuildRequires:	intltool >= 0.27.1
 BuildRequires:	libglade2-devel >= 2.3.0
 BuildRequires:	libgnomeprintui-devel >= 2.5.0
 BuildRequires:	libgnomeui-devel >= 2.5.0
@@ -68,7 +67,7 @@ Summary(pt_BR):	Arquivos de inclusЦo do gal
 Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	libglade2-devel >= 2.3.0
 Requires:	libgnomeprintui-devel >= 2.5.0
 Requires:	libgnomeui-devel >= 2.5.0
@@ -98,7 +97,7 @@ Summary:	gal static libraries
 Summary(pl):	Biblioteki statyczne gala
 Summary(pt_BR):	Bibliotecas estАticas do gal
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 Obsoletes:	gal2-static
 
 %description static
@@ -112,9 +111,11 @@ Bibliotecas estАticas do gal.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
-cp %{_datadir}/automake/mkinstalldirs ./
 rm -f missing
 glib-gettextize --copy --force
 intltoolize --copy --force
