@@ -1,12 +1,12 @@
---- gal-0.11.2.new/tests/Makefile.am~.	Tue Jun  5 19:46:56 2001
-+++ gal-0.11.2.new/tests/Makefile.am	Mon Sep 10 14:04:04 2001
+--- gal-0.14/tests/Makefile.am.orig	Tue Oct  9 01:28:11 2001
++++ gal-0.14/tests/Makefile.am	Wed Oct 17 03:31:16 2001
 @@ -1,5 +1,4 @@
  
 -
  INCLUDES =					\
  	-I$(top_srcdir)                         \
  	-I$(top_srcdir)/gal                     \
-@@ -21,58 +20,12 @@
+@@ -21,37 +20,12 @@
  noinst_PROGRAMS = \
  	test-table-1 test-tree-1 $(vfs_programs) test-tree-3 test-shortcut-bar test-define-views test-unicode
  
@@ -19,25 +19,21 @@
 -test_shortcut_bar_LDFLAGS = $(LDFLAGS)
 -test_shortcut_bar_LDADD = $(LDADD)
 -
- if GAL_HAVE_VFS
+-if GAL_HAVE_VFS
 -#test_tree_2_LDFLAGS = $(LDFLAGS)
 -#test_tree_2_LDADD = $(LDADD)		\
 -#	$(GNOME_VFS_LIBS)
-+#test_tree_2_LDADD = $(GNOME_VFS_LIBS)
- endif
- 
+-endif
+-
 -test_tree_3_LDFLAGS = $(LDFLAGS)
 -test_tree_3_LDADD = $(LDADD) 
 -
  test_shortcut_bar_SOURCES = 	\
  	test-shortcut-bar.c
  
--test_shortcut_bar_LDFLAGS = $(LDFLAGS)
--test_shortcut_bar_LDADD = $(LDADD)
--
  test_define_views_SOURCES = 	\
  	test-define-views.c
--
+ 
 -test_define_views_LDFLAGS = $(LDFLAGS)
 -test_define_views_LDADD   = $(LDADD)
 -
@@ -45,24 +41,6 @@
 -test_unicode_LDADD   = $(LDADD)
 -
 -
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+ 
+ 
+ 
