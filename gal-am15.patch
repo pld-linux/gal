@@ -1,5 +1,29 @@
---- gal-0.14/tests/Makefile.am.orig	Tue Oct  9 01:28:11 2001
-+++ gal-0.14/tests/Makefile.am	Wed Oct 17 03:31:16 2001
+diff -ur gal-0.19.2.orig/gal/e-table/Makefile.am gal-0.19.2/gal/e-table/Makefile.am
+--- gal-0.19.2.orig/gal/e-table/Makefile.am	Sat May 18 08:51:24 2002
++++ gal-0.19.2/gal/e-table/Makefile.am	Sat May 18 08:53:28 2002
+@@ -155,4 +155,4 @@
+ EXTRA_DIST =			\
+ 	 $(icons)		\
+ 	 $(glade_DATA)
+-#	 sample.table		\
++#	 sample.table		
+Only in gal-0.19.2/gal/e-table: Makefile.am~
+diff -ur gal-0.19.2.orig/gal/e-text/Makefile.am gal-0.19.2/gal/e-text/Makefile.am
+--- gal-0.19.2.orig/gal/e-text/Makefile.am	Wed Oct 24 06:42:09 2001
++++ gal-0.19.2/gal/e-text/Makefile.am	Sat May 18 08:52:37 2002
+@@ -39,7 +39,7 @@
+ #	e-text-model-test \
+ #
+ #	e-text-test	\
+-#	e-entry-test	\
++#	e-entry-test	
+ 
+ 
+ 
+Only in gal-0.19.2/gal/e-text: Makefile.am~
+diff -ur gal-0.19.2.orig/tests/Makefile.am gal-0.19.2/tests/Makefile.am
+--- gal-0.19.2.orig/tests/Makefile.am	Tue Oct  2 16:19:39 2001
++++ gal-0.19.2/tests/Makefile.am	Sat May 18 08:54:05 2002
 @@ -1,5 +1,4 @@
  
 -
