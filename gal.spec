@@ -5,7 +5,7 @@ Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
 Version:	0.19.3
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -15,13 +15,12 @@ Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
 Patch2:		%{name}-am15.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	intltool
-BuildRequires:	libtool
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.2.12
 BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	gnome-vfs-devel
 BuildRequires:	gtk+-devel
+BuildRequires:	intltool
 BuildRequires:	libglade-devel >= 0.13
 BuildRequires:	libtool
 BuildRequires:	libunicode-devel
@@ -68,6 +67,9 @@ Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	gdk-pixbuf-gnome-devel
+Requires:	gnome-print-devel
+Requires:	libglade-gnome-devel
 Obsoletes:	libgal19-devel
 
 %description devel
