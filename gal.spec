@@ -135,7 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # shutup check-files
-rm -f $RPM_BUILD_ROOT/%{_libdir}/gtk-2.0/modules/lib*.a
+rm -f $RPM_BUILD_ROOT/%{_libdir}/gtk-2.0/modules/lib*.{la,a}
 
 %find_lang %{name}-%{version}
 
@@ -150,14 +150,12 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %attr(755,root,root) %{_libdir}/gtk-2.0/modules/lib*.so
-%{_libdir}/gtk-2.0/modules/lib*.la
 %{_datadir}/gal-2.0
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_libdir}/gtk-2.0/modules/lib*.la
 %{_includedir}/*
 %{_pkgconfigdir}/*
 %{_gtkdocdir}/*
