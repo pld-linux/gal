@@ -1,5 +1,5 @@
 
-%define _snap 20030329
+%define _snap 20030405
 
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
@@ -135,7 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang gal-2.0
+%find_lang gal-1.99.2.99
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -143,7 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files -f gal-2.0.lang
+%files -f gal-1.99.2.99.lang
 %defattr(644,root,root,755)
 %doc announce* AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
