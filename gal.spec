@@ -128,7 +128,7 @@ intltoolize --copy --force
 	--enable-static \
 	--disable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}/%{name}
-	
+
 %{__make}
 
 %install
