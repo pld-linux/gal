@@ -1,0 +1,18 @@
+--- gal-1.99.11/configure.in.orig	Fri Feb 20 16:48:48 2004
++++ gal-1.99.11/configure.in	Fri Mar 19 13:56:16 2004
+@@ -100,6 +100,7 @@
+ 
+ save_CFLAGS="$CFLAGS"
+ save_LIBS="$LIBS"
++AC_CHECK_FUNC(iconv, [have_iconv=yes],[
+ CFLAGS="$CFLAGS $ICONV_CFLAGS"
+ LIBS="$LIBS $ICONV_LIBS -liconv"
+ AC_CACHE_CHECK(for iconv in -liconv, ac_cv_libiconv, AC_TRY_LINK([
+@@ -116,6 +117,7 @@
+ 	LIBS="$save_LIBS"
+ 	AC_CHECK_FUNC(iconv, have_iconv=yes, have_iconv=no)
+ fi
++])
+ 
+ if test $have_iconv = yes; then
+ 	if test $ac_cv_libiconv = no; then
