@@ -1,3 +1,4 @@
+%define	snap	20031227
 Summary:	GNOME Application Libs (GAL)
 Summary(ko):	GNOME юю©Кга╥н╠в╥╔ ╤Сюл╨Й╥╞╦╝
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
@@ -6,25 +7,24 @@ Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
 Version:	2.1.1
-Release:	1
+Release:	1.%{snap}.1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	5b9a3e9729c9576dcaf8b23db66fcf6f
+Source0:	%{name}-%{version}-%{snap}.tar.bz2
+# Source0-md5:	875f9a763e73eb1d22d577f2413931db
+#Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.3.0
-BuildRequires:	gnome-vfs2-devel
-BuildRequires:	gtk+2-devel
+BuildRequires:	gnome-vfs2-devel >= 2.5.0
+BuildRequires:	gtk+2-devel >= 2.3.0
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
-BuildRequires:	libglade2-devel
-BuildRequires:	libgnomecanvas-devel
-BuildRequires:	libgnomeprint-devel >= 2.2.0
-BuildRequires:	libgnomeprintui-devel >= 2.2.1
-BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
+BuildRequires:	libglade2-devel >= 2.3.0
+BuildRequires:	libgnomeprintui-devel >= 2.5.0
+BuildRequires:	libgnomeui-devel >= 2.5.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 Obsoletes:	gal2
@@ -68,9 +68,9 @@ Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
-Requires:	libglade2-devel
-Requires:	libgnomeprintui-devel >= 2.2.1
-Requires:	libgnomeui-devel >= 2.3.3.1-2
+Requires:	libglade2-devel >= 2.3.0
+Requires:	libgnomeprintui-devel >= 2.5.0
+Requires:	libgnomeui-devel >= 2.5.0
 Obsoletes:	gal2-devel
 Obsoletes:	libgal19-devel
 
@@ -113,6 +113,7 @@ Bibliotecas estАticas do gal.
 %setup -q
 
 %build
+cp %{_datadir}/automake/mkinstalldirs ./
 rm -f missing
 glib-gettextize --copy --force
 intltoolize --copy --force
