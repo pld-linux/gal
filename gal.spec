@@ -2,7 +2,7 @@ Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Name:		gal
 Version:	0.7
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -15,7 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	libtool
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.2.12
-BuildRequires:	gnome-print-devel >= 0.22
+BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	gnome-vfs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libglade-devel >= 0.13
