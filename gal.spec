@@ -69,8 +69,8 @@ Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
-Requires:	gtk+2-devel
-Requires:	libgnomeprint-devel
+Requires:	libgnomeprintui-devel >= 2.2.1
+Requires:	libgnomeui-devel >= 2.2.0
 Requires:	libglade2-devel
 Obsoletes:	libgal19-devel
 Obsoletes:	gal2-devel
