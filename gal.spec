@@ -56,7 +56,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gtk+2-devel
 Requires:	libgnomeprint-devel
-Requires:	libglade2-gnome-devel
+Requires:	libglade2-devel
 Obsoletes:	libgal19-devel
 
 %description devel
