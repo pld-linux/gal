@@ -1,5 +1,5 @@
 
-%define _snap 20030412
+%define _snap 20030418
 
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
