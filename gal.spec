@@ -1,5 +1,6 @@
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
+Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Name:		gal
 Version:	0.18
 Release:	1
@@ -10,6 +11,9 @@ Group(de):	X11/Libraries
 Group(es):	X11/Bibliotecas
 Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
+Group(pt_BR):	X11/Bibliotecas
+Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
+Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-no_version.patch
 Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
@@ -43,12 +47,23 @@ Pakiet zawiera funkcje pochodz±ce z programów Gnumeric i Evolution.
 Ide± tej biblioteki jest u¿ywanie tych funkcji i wigetów w innych
 programach GNOME.
 
+%description -l pt_BR
+Este módulo contém algumas funções de biblioteca que vinham com o
+Gnumeric e com o Evolution. A idéia é reutilizar estes componentes em
+uma série de aplicações GNOME maiores.
+
 %package devel
 Summary:	gal header files and development documentation
 Summary(pl):	pliki nag³ówkowe i dokumentacja gala
+Summary(pt_BR):	Arquivos de inclusão do gal
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 
 %description devel
@@ -57,12 +72,22 @@ Header files and development documentation for the gal libraries.
 %description -l pl devel
 Pliki nag³ówkowe i dokumentacja do bibliotek gal.
 
+%description -l pt_BR devel 
+Arquivos de inclusão necessários para compilar os aplicativos que usam
+o gal.
+
 %package static
 Summary:	gal static libraries
 Summary(pl):	Biblioteki statyczne gala
+Summary(pt_BR):	Bibliotecas estáticas do gal
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -70,6 +95,9 @@ Gal static libraries.
 
 %description -l pl static
 Biblioteki statyczne gal.
+
+%description -l pt_BR static
+Bibliotecas estáticas do gal.
 
 %prep
 %setup -q
