@@ -1,0 +1,10 @@
+--- gal-0.9/configure.in~	Wed Jul 18 03:31:51 2001
++++ gal-0.9/configure.in	Wed Jul 18 03:38:28 2001
+@@ -299,7 +299,6 @@
+ Makefile
+ intl/Makefile
+ po/Makefile.in
+-macros/Makefile
+ gal/Makefile
+ gal/util/Makefile
+ gal/unicode/Makefile
