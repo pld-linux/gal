@@ -4,16 +4,15 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	0.19.3
-Release:	3
+Version:	0.21
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/mirror/gnome.org/sources/gal/%{version}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-no_version.patch
 Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
 Patch2:		%{name}-am15.patch
-Patch3:		%{name}-remove_duplicates_from_AC_CONFIG_FILES.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	gettext-devel
@@ -23,9 +22,11 @@ BuildRequires:	gnome-vfs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	intltool
 BuildRequires:	libglade-devel >= 0.13
+BuildRequires:	libglade-gnome-devel >= 0.13
 BuildRequires:	libtool
 BuildRequires:	libunicode-devel
 BuildRequires:	libxml-devel
+BuildRequires:	gdk-pixbuf-gnome-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgal19
 
@@ -110,9 +111,8 @@ Bibliotecas estАticas do gal.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
@@ -133,7 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}
+%find_lang %{name} --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -145,9 +145,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/etable
-%dir %{_datadir}/gal
-%{_datadir}/gal/glade
-%{_pixmapsdir}/gal
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/glade
+%{_datadir}/%{name}/html
+%{_datadir}/%{name}/%{version}/pixmaps
 
 %files devel
 %defattr(644,root,root,755)
@@ -155,7 +156,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/*.sh
 %attr(755,root,root) %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_includedir}/gal
+%{_includedir}/%{name}
 
 %files static
 %defattr(644,root,root,755)
