@@ -1,6 +1,7 @@
 Summary:	GNOME Application Libs (GAL)
+Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Name:		gal
-Version:	0.4.1
+Version:	0.5
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
@@ -9,12 +10,17 @@ Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.tar.gz
 Patch0:		%{name}-no_version.patch
 BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	libtool
 BuildRequires:	gettext-devel
+BuildRequires:	gnome-libs-devel >= 1.2.12
 BuildRequires:	gnome-print-devel >= 0.22
 BuildRequires:	gnome-vfs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libglade-devel >= 0.13
 BuildRequires:	libunicode-devel
+BuildRequires:	iconv
+BuildRequires:	libxml-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -26,8 +32,13 @@ that came from Gnumeric and Evolution. The idea is to reuse those
 widgets across various larger GNOME applications that might want to
 use these widgets.
 
+%description -l pl
+Pakiet zawiera funkcje pochodz±ce z programów Gnumeric i Evolution. Ide± tej
+biblioteki jest u¿ywanie tych funkcji i wigetów w innych programach GNOME.
+
 %package devel
 Summary:	gal header files and development documentation
+Summary(pl):	pliki nag³ówkowe i dokumentacja gala
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
@@ -41,7 +52,7 @@ Pliki nag³ówkowe i dokumentacja do bibliotek gal.
 
 %package static
 Summary:	gal static libraries
-Summary(pl):	Biblioteki statyczne Gtk+
+Summary(pl):	Biblioteki statyczne gala
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
@@ -59,7 +70,9 @@ Biblioteki statyczne gal.
 
 %build
 gettextize --copy --force
-automake
+automake -a -c
+aclocal -I %{_aclocaldir}/gnome
+autoconf
 %configure \
 	--enable-static
 %{__make}
