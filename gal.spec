@@ -54,9 +54,9 @@ Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gdk-pixbuf-gnome-devel
-Requires:	gnome-print-devel
-Requires:	libglade-gnome-devel
+Requires:	gtk+2-devel
+Requires:	libgnomeprint-devel
+Requires:	libglade2-gnome-devel
 Obsoletes:	libgal19-devel
 
 %description devel
