@@ -22,6 +22,7 @@ BuildRequires:	libglade-devel >= 0.13
 BuildRequires:	libunicode-devel
 BuildRequires:	iconv
 BuildRequires:	libxml-devel
+BuildRequires:	xml-i18n-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
