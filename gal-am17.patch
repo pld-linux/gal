@@ -1,0 +1,9 @@
+diff -Nru gal-1.99.3.99.orig/gal/e-table/Makefile.am gal-1.99.3.99/gal/e-table/Makefile.am
+--- gal-1.99.3.99.orig/gal/e-table/Makefile.am	Wed Jan  8 20:16:52 2003
++++ gal-1.99.3.99/gal/e-table/Makefile.am	Fri Apr 25 14:40:52 2003
+@@ -159,4 +159,4 @@
+ EXTRA_DIST =			\
+ 	 $(icons)		\
+ 	 $(glade_DATA)
+-#	 sample.table		\
++#	 sample.table
