@@ -13,6 +13,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.99/%{name}-%{version}.
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libgnomeprint-devel >= 2.2.0
+BuildRequires:	libgnomeprintui-devel >= 2.2.0
 BuildRequires:	intltool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgal19
