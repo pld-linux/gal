@@ -1,7 +1,7 @@
 Summary:	the G App Libs (GAL)
 Name:		gal
 Version:	0.2.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -78,7 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-#%files -f %{name}.lang
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
