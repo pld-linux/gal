@@ -118,18 +118,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %attr(755,root,root) %{_libdir}/gtk-2.0/modules/lib*.so
 %{_libdir}/gtk-2.0/modules/lib*.la
-%dir %{_datadir}/%{name}-2.0
-%{_datadir}/%{name}-2.0/%{version}/glade
-%{_datadir}/%{name}-2.0/html
-%{_datadir}/%{name}-2.0/%{version}/pixmaps
+%{_datadir}/*
 %{_pkgconfigdir}/gal-2.0.pc
 
 %files devel
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_includedir}/%{name}-2.0
+%{_libdir}/lib*.la
+%{_includedir}/*
 
 %files static
 %defattr(644,root,root,755)
