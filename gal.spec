@@ -55,10 +55,10 @@ Requires:	%{name} = %{version}
 %description devel
 Header files and development documentation for the gal libraries.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe i dokumentacja do bibliotek gal.
 
-%description -l pt_BR devel 
+%description devel -l pt_BR
 Arquivos de inclusão necessários para compilar os aplicativos que usam
 o gal.
 
@@ -72,10 +72,10 @@ Requires:	%{name}-devel = %{version}
 %description static
 Gal static libraries.
 
-%description -l pl static
+%description static -l pl
 Biblioteki statyczne gal.
 
-%description -l pt_BR static
+%description static -l pt_BR
 Bibliotecas estáticas do gal.
 
 %prep
