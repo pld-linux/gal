@@ -1,4 +1,5 @@
 Summary:	GNOME Application Libs (GAL)
+Summary(es):	Bibliotecas de Aplicaciones de GNOME (GAL)
 Summary(ko):	GNOME ÀÀ¿ëÇÁ·Î±×·¥ ¶óÀÌºê·¯¸®
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
@@ -37,6 +38,12 @@ library functions that came from Gnumeric and Evolution. The idea is
 to reuse those widgets across various larger GNOME applications that
 might want to use these widgets.
 
+%description -l es
+Éstas son las Bibliotecas de Aplicaciones de GNOME (GAL). Este módulo
+contiene unas funciones provenientes de Gnumeric y Evolution. La
+intención es reutilizar estos componentes entre las varias aplicaciones
+GNOME grandes que quieran utilizarlos.
+
 %description -l pl
 Pakiet zawiera funkcje pochodz±ce z programów Gnumeric i Evolution.
 Ide± tej biblioteki jest u¿ywanie tych funkcji i wigetów w innych
@@ -61,6 +68,7 @@ uma série de aplicações GNOME maiores.
 
 %package devel
 Summary:	gal header files and development documentation
+Summary(es):	Ficheros de cabecera y documentación de desarrollo para gal
 Summary(ko):	GAL ÀÀ¿ëÇÁ·Î±×·¥À» °³¹ßÇÏ±â À§ÇÑ ¶óÀÌºê·¯¸®¿Í Çì´õÆÄÀÏ
 Summary(pl):	pliki nag³ówkowe i dokumentacja gala
 Summary(pt_BR):	Arquivos de inclusão do gal
@@ -76,6 +84,9 @@ Obsoletes:	libgal19-devel
 
 %description devel
 Header files and development documentation for the gal libraries.
+
+%description devel -l es
+Ficheros de cabecera y documentación de desarrollo para las bibliotecas gal.
 
 %description devel -l pl
 Pliki nag³ówkowe i dokumentacja do bibliotek gal.
@@ -94,6 +105,7 @@ o gal.
 
 %package static
 Summary:	gal static libraries
+Summary(es):	Bibliotecas estáticas de gal
 Summary(pl):	Biblioteki statyczne gala
 Summary(pt_BR):	Bibliotecas estáticas do gal
 Group:		X11/Development/Libraries
@@ -102,6 +114,9 @@ Obsoletes:	gal2-static
 
 %description static
 Gal static libraries.
+
+%description static -l es
+Bibliotecas estáticas de gal.
 
 %description static -l pl
 Biblioteki statyczne gal.
