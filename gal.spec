@@ -6,13 +6,13 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	2.1.3
+Version:	2.1.4
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	5fd284ffe432b60ab5d64a61fc784af2
+# Source0-md5:	5f921b0696c755f64bd80090432653c9
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
 BuildRequires:	autoconf
 BuildRequires:	automake
