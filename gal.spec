@@ -15,6 +15,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.99/%{name}-%{version}.
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
+BuildRequires:	gnome-common >= 2.3.0
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	gtk-doc
