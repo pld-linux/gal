@@ -1,7 +1,7 @@
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Name:		gal
-Version:	0.11.2
+Version:	0.14
 Release:	1
 Epoch:		1
 License:	LGPL
@@ -13,8 +13,7 @@ Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-no_version.patch
 Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
-Patch2:		%{name}-i18n.patch
-Patch3:		%{name}-am15.patch
+Patch2:		%{name}-am15.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
@@ -77,7 +76,6 @@ Biblioteki statyczne gal.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
