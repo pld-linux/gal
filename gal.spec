@@ -30,8 +30,6 @@ BuildRequires:	gdk-pixbuf-gnome-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgal19
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 This the GNOME Application Libs (GAL). This module contains some
