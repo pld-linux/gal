@@ -68,7 +68,7 @@ Summary(pt_BR):	Arquivos de inclusЦo do gal
 Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Requires:	gtk+2-devel
 Requires:	libgnomeprint-devel
 Requires:	libglade2-devel
@@ -98,7 +98,7 @@ Summary:	gal static libraries
 Summary(pl):	Biblioteki statyczne gala
 Summary(pt_BR):	Bibliotecas estАticas do gal
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 Obsoletes:	gal2-static
 
 %description static
