@@ -1,5 +1,5 @@
 
-%define _snap 20030223
+%define _snap 20030307
 
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
@@ -7,7 +7,7 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	1.99.1.99
+Version:	1.99.2.99
 Release:	0.%{_snap}.1
 Epoch:		1
 License:	LGPL
@@ -134,13 +134,15 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang gal-2.0
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files
+%files -f gal-2.0.lang
 %defattr(644,root,root,755)
 %doc announce* AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
