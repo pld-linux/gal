@@ -7,7 +7,7 @@ Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
 Version:	1.99.8
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -25,12 +25,12 @@ BuildRequires:	libglade2-devel
 BuildRequires:	libgnomecanvas-devel
 BuildRequires:	libgnomeprint-devel >= 2.2.0
 BuildRequires:	libgnomeprintui-devel >= 2.2.1
-BuildRequires:	libgnomeui-devel >= 2.2.0
+BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	libgal19
 Obsoletes:	gal2
+Obsoletes:	libgal19
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This the GNOME Application Libs (GAL). This module contains some
@@ -70,10 +70,10 @@ Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	libgnomeprintui-devel >= 2.2.1
-Requires:	libgnomeui-devel >= 2.2.0
+Requires:	libgnomeui-devel >= 2.3.3.1-2
 Requires:	libglade2-devel
-Obsoletes:	libgal19-devel
 Obsoletes:	gal2-devel
+Obsoletes:	libgal19-devel
 
 %description devel
 Header files and development documentation for the gal libraries.
