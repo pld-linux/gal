@@ -13,6 +13,7 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.t
 Patch0:		%{name}-no_version.patch
 Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
 Patch2:		%{name}-am15.patch
+Patch3:		%{name}-remove_duplicates_from_AC_CONFIG_FILES.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	gettext-devel
@@ -111,6 +112,7 @@ Bibliotecas estáticas do gal.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
