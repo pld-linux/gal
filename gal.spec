@@ -1,6 +1,6 @@
 Summary:	the G App Libs (GAL)
 Name:		gal
-Version:	0.2.2
+Version:	0.3
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
@@ -14,9 +14,7 @@ BuildRequires:	gtk+-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
-%define		_infodir	/usr/share/info
-%define		_mandir		/usr/X11R6/man
-%define		_sysconfdir	%{_datadir}
+%define		_mandir		%{_prefix}/man
 
 %description
 This the G App Libs (GAL). This module contains some library functions
@@ -70,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
-#%find_lang %{name}
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,10 +76,11 @@ rm -rf $RPM_BUILD_ROOT
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%{_sysconfdir}/etable
+%{_datadir}/etable
+%{_datadir}/gal
 
 %files devel
 %defattr(644,root,root,755)
