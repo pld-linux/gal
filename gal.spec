@@ -14,6 +14,7 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.t
 Patch0:		%{name}-no_version.patch
 Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
 Patch2:		%{name}-i18n.patch
+Patch3:		%{name}-am15.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
@@ -76,16 +77,17 @@ Biblioteki statyczne gal.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
 mv -f configure.in.tmp configure.in
+rm -f missing
 libtoolize --copy --force
 gettextize --copy --force
-automake -a -c
 aclocal -I %{_aclocaldir}/gnome
-rm -f missing
 autoconf
+automake -a -c
 %configure \
 	--enable-static
 %{__make}
