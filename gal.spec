@@ -6,13 +6,13 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	2.1.11
+Version:	2.1.12
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	b91da3ce23f9edc47dcc52689754b6e1
+# Source0-md5:	d6a53c9079f604d0b26b1a4662729e28
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-iconv-in-glibc.patch
 Patch2:		%{name}-gcc-3.4.patch
@@ -20,7 +20,7 @@ BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.4.0
-BuildRequires:	gtk+2-devel >= 2:2.4.3
+BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	intltool >= 0.27.1
 BuildRequires:	libglade2-devel >= 1:2.4.0
