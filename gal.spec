@@ -1,9 +1,11 @@
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
+Summary(ru):	Библиотека для составных документов в GNOME
+Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	0.19.2
-Release:	2
+Version:	0.19.3
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -46,10 +48,24 @@ Este mСdulo contИm algumas funГУes de biblioteca que vinham com o
 Gnumeric e com o Evolution. A idИia И reutilizar estes componentes em
 uma sИrie de aplicaГУes GNOME maiores.
 
+%description -l ru
+Это пакет G App Libs (GAL). Он содержит некоторые библиотечные
+функции, пришедшие из Gnumeric и Evolution. Идея в том, чтобы
+использовать их виджеты в других приложениях GNOME, которым эти
+виджеты могли бы пригодиться.
+
+%description -l uk
+Це пакет G App Libs (GAL). В╕н м╕стить деяк╕ б╕бл╕отечн╕ функц╕╖, що
+походять в╕д Gnumeric та Evolution. ╤дея в тому, щоб використати ╖х
+в╕джети в ╕нших програмах GNOME, яким ц╕ в╕джети могли б стати в
+нагод╕.
+
 %package devel
 Summary:	gal header files and development documentation
 Summary(pl):	pliki nagЁСwkowe i dokumentacja gala
 Summary(pt_BR):	Arquivos de inclusЦo do gal
+Summary(ru):	Библиотеки и хедеры для gal
+Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Obsoletes:	libgal19-devel
@@ -63,6 +79,14 @@ Pliki nagЁСwkowe i dokumentacja do bibliotek gal.
 %description devel -l pt_BR
 Arquivos de inclusЦo necessАrios para compilar os aplicativos que usam
 o gal.
+
+%description devel -l ru
+Этот пакет содержит необходимые библиотеки и файлы заголовков для
+разработки программ с использованием gal.
+
+%description devel -l uk
+Цей пакет м╕стить необх╕дн╕ б╕бл╕отеки розробки та файли заголовк╕в
+для розробки програм з використанням gal.
 
 %package static
 Summary:	gal static libraries
@@ -119,6 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/etable
 %dir %{_datadir}/gal
 %{_datadir}/gal/glade
+%{_pixmapsdir}/gal
 
 %files devel
 %defattr(644,root,root,755)
