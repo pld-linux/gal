@@ -7,27 +7,29 @@ Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
 Version:	1.99.11
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.99/%{name}-%{version}.tar.bz2
 # Source0-md5:	906c0640d3160a55aac98974aecfb316
-BuildRequires:	autoconf
+Patch0:		%{name}-iconv-in-glibc.patch
+Patch1:		%{name}-locale-names.patch
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.3.0
-BuildRequires:	gnome-vfs2-devel
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 1:2.2.0
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
 BuildRequires:	libglade2-devel
-BuildRequires:	libgnomecanvas-devel
+BuildRequires:	libgnomecanvas-devel >= 2.2.0.2
 BuildRequires:	libgnomeprint-devel >= 2.2.0
 BuildRequires:	libgnomeprintui-devel >= 2.2.1
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig
 Obsoletes:	gal2
 Obsoletes:	libgal19
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -75,7 +77,7 @@ Summary(pt_BR):	Arquivos de inclusЦo do gal
 Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	libglade2-devel
 Requires:	libgnomeprintui-devel >= 2.2.1
 Requires:	libgnomeui-devel >= 2.3.3.1-2
@@ -110,7 +112,7 @@ Summary(es):	Bibliotecas estАticas de gal
 Summary(pl):	Biblioteki statyczne gala
 Summary(pt_BR):	Bibliotecas estАticas do gal
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 Obsoletes:	gal2-static
 
 %description static
@@ -127,9 +129,12 @@ Bibliotecas estАticas do gal.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
+
+mv -f po/{no,nb}.po
 
 %build
-rm -f missing
 glib-gettextize --copy --force
 intltoolize --copy --force
 %{__libtoolize}
