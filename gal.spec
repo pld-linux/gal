@@ -6,16 +6,16 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	1.99.8
-Release:	2
+Version:	1.99.9
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.99/%{name}-%{version}.tar.bz2
-# Source0-md5:	2f3323decf2bbfa11d32f97998e044d9
+# Source0-md5:	02f098cbd2d5dd69f1b808356a80a0d3
 Patch0:		%{name}-am17.patch
-BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk+2-devel
@@ -69,9 +69,9 @@ Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
+Requires:	libglade2-devel
 Requires:	libgnomeprintui-devel >= 2.2.1
 Requires:	libgnomeui-devel >= 2.3.3.1-2
-Requires:	libglade2-devel
 Obsoletes:	gal2-devel
 Obsoletes:	libgal19-devel
 
