@@ -6,16 +6,15 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	2.1.14
+Version:	2.2.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	fc2d5527220b406ef1540625a46d13ac
-Patch0:		%{name}-locale-names.patch
-Patch1:		%{name}-iconv-in-glibc.patch
-Patch2:		%{name}-gcc-3.4.patch
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.2/%{name}-%{version}.tar.bz2
+# Source0-md5:	34baf5bd0ee72a54ca3ee998ce48fb66
+Patch0:		%{name}-iconv-in-glibc.patch
+Patch1:		%{name}-gcc-3.4.patch
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -129,10 +128,7 @@ Bibliotecas estАticas do gal.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p0
-
-mv -f po/{no,nb}.po
+%patch1 -p0
 
 %build
 glib-gettextize --copy --force
@@ -157,6 +153,8 @@ rm -rf $RPM_BUILD_ROOT
 
 # shutup check-files
 rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/lib*.{la,a}
+
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name}-2.2
 
