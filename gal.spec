@@ -1,7 +1,7 @@
 Summary:	the G App Libs (GAL)
 Name:		gal
 Version:	0.3
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -11,6 +11,7 @@ Patch0:		%{name}-no_version.patch
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel
+BuildRequires:	libglade-devel >= 0.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
