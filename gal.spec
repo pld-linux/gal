@@ -2,7 +2,7 @@ Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Name:		gal
-Version:	0.18
+Version:	0.18.1
 Release:	1
 Epoch:		1
 License:	LGPL
