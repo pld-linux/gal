@@ -4,7 +4,7 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	0.21
+Version:	0.22
 Release:	1
 Epoch:		1
 License:	LGPL
