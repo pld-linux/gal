@@ -150,7 +150,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gtk-2.0/modules/lib*.so
 %{_libdir}/gtk-2.0/modules/lib*.la
 %{_datadir}/gal-2.0
-%{_pkgconfigdir}/gal-2.0.pc
 
 %files devel
 %defattr(644,root,root,755)
