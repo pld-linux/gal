@@ -1,5 +1,6 @@
 
 Summary:	GNOME Application Libs (GAL)
+Summary(ko):	GNOME юю©Кга╥н╠в╥╔ ╤Сюл╨Й╥╞╦╝
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
@@ -60,6 +61,7 @@ uma sИrie de aplicaГУes GNOME maiores.
 
 %package devel
 Summary:	gal header files and development documentation
+Summary(ko):	GAL юю©Кга╥н╠в╥╔ю╩ ╟Ё╧ъго╠Б ю╖гя ╤Сюл╨Й╥╞╦╝©м гЛ╢Уфдюо
 Summary(pl):	pliki nagЁСwkowe i dokumentacja gala
 Summary(pt_BR):	Arquivos de inclusЦo do gal
 Summary(ru):	Библиотеки и хедеры для gal
