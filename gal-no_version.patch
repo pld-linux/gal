@@ -1,0 +1,10 @@
+diff -Nru gal-0.2/gal/e-table/Makefile.am gal-0.2.new/gal/e-table/Makefile.am
+--- gal-0.2/gal/e-table/Makefile.am	Thu Oct 19 21:58:26 2000
++++ gal-0.2.new/gal/e-table/Makefile.am	Mon Oct 23 03:37:41 2000
+@@ -1,5 +1,5 @@
+ 
+-gladedir = $(datadir)/etable/$(VERSION)/glade
++gladedir = $(datadir)/etable
+ glade_DATA = 					\
+ 	e-table-config.glade			\
+ 	e-table-group.glade			\
