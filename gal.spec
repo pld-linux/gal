@@ -1,15 +1,19 @@
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Name:		gal
-Version:	0.8
+Version:	0.9.1
 Release:	1
+Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.tar.gz
 Patch0:		%{name}-no_version.patch
 Patch1:		%{name}-use_AM_GNU_GETTEXT.patch
+Patch2:		%{name}-no_macros_in_AC_OUTPUT.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
@@ -29,14 +33,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		%{_prefix}/man
 
 %description
-This the GNOME Application Libs (GAL). This module contains some library functions
-that came from Gnumeric and Evolution. The idea is to reuse those
-widgets across various larger GNOME applications that might want to
-use these widgets.
+This the GNOME Application Libs (GAL). This module contains some
+library functions that came from Gnumeric and Evolution. The idea is
+to reuse those widgets across various larger GNOME applications that
+might want to use these widgets.
 
 %description -l pl
-Pakiet zawiera funkcje pochodz±ce z programów Gnumeric i Evolution. Ide± tej
-biblioteki jest u¿ywanie tych funkcji i wigetów w innych programach GNOME.
+Pakiet zawiera funkcje pochodz±ce z programów Gnumeric i Evolution.
+Ide± tej biblioteki jest u¿ywanie tych funkcji i wigetów w innych
+programach GNOME.
 
 %package devel
 Summary:	gal header files and development documentation
@@ -70,6 +75,7 @@ Biblioteki statyczne gal.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 libtoolize --copy --force
@@ -102,7 +108,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/etable
-%{_datadir}/gal
+%dir %{_datadir}/gal
+%{_datadir}/gal/glade
 
 %files devel
 %defattr(644,root,root,755)
