@@ -8,3 +8,24 @@ diff -Nru gal-0.2/gal/e-table/Makefile.am gal-0.2.new/gal/e-table/Makefile.am
  glade_DATA = 					\
  	e-table-config.glade			\
  	e-table-group.glade			\
+diff -Nru gal-0.9.1/gal/menus/Makefile.am gal-0.9.1.new/gal/menus/Makefile.am
+--- gal-0.9.1/gal/menus/Makefile.am	Mon Apr 23 21:17:56 2001
++++ gal-0.9.1.new/gal/menus/Makefile.am	Wed Jul 18 04:11:32 2001
+@@ -1,4 +1,4 @@
+-gladedir = $(datadir)/gal/$(VERSION)/glade
++gladedir = $(datadir)/gal/glade
+ glade_DATA = 					\
+ 	gal-define-views.glade			\
+ 	gal-view-new-dialog.glade
+diff -Nru gal-0.9.1/gal/widgets/Makefile.am gal-0.9.1.new/gal/widgets/Makefile.am
+--- gal-0.9.1/gal/widgets/Makefile.am	Mon Jul  2 23:19:18 2001
++++ gal-0.9.1.new/gal/widgets/Makefile.am	Wed Jul 18 04:11:03 2001
+@@ -39,7 +39,7 @@
+ 
+ libwidgets_la_LDFLAGS = 			\
+ 	$(ICONV_LIBS)
+-gladedir = $(datadir)/gal/$(VERSION)/glade
++gladedir = $(datadir)/gal/glade
+ glade_DATA = 					\
+ 	gal-categories.glade			\
+ 	e-categories-master-list-dialog.glade
