@@ -3,7 +3,7 @@ Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Name:		gal
 Version:	0.19.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -25,6 +25,7 @@ BuildRequires:	libunicode-devel
 BuildRequires:	libxml-devel
 BuildRequires:	xml-i18n-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libgal19
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -51,6 +52,7 @@ Summary(pl):	pliki nag³ówkowe i dokumentacja gala
 Summary(pt_BR):	Arquivos de inclusão do gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
+Obsoletes:	libgal19-devel
 
 %description devel
 Header files and development documentation for the gal libraries.
