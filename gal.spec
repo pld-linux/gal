@@ -13,6 +13,7 @@ Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.99/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-am17.patch
 Source0: %{name}-%{version}-%{_snap}.tar.bz2
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -111,6 +112,7 @@ Bibliotecas estáticas do gal.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
