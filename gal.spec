@@ -1,7 +1,7 @@
 Summary:	the G App Libs (GAL)
 Name:		gal
-Version:	0.2.1
-Release:	2
+Version:	0.2.2
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
