@@ -6,23 +6,23 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	2.4.0
+Version:	2.4.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gal/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	ce94075fa92400328ff02d7b8f3c7f3a
+# Source0-md5:	eded59870f5a0545761e7180349b0e99
 Patch0:		%{name}-iconv-in-glibc.patch
 Patch1:		%{name}-gcc-3.4.patch
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gtk+2-devel >= 2:2.6.2
-BuildRequires:	gtk-doc >= 1.0
-BuildRequires:	intltool >= 0.27.1
-BuildRequires:	libglade2-devel >= 1:2.5.0
+BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	gtk-doc >= 1.3
+BuildRequires:	intltool >= 0.33
+BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeprintui-devel >= 2.10.0
 BuildRequires:	libgnomeui-devel >= 2.10.0
 BuildRequires:	libtool
@@ -76,7 +76,7 @@ Summary(ru):	Библиотеки и хедеры для gal
 Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	libglade2-devel >= 1:2.5.0
+Requires:	libglade2-devel >= 1:2.5.1
 Requires:	libgnomeprintui-devel >= 2.10.0
 Requires:	libgnomeui-devel >= 2.10.0
 Obsoletes:	gal2-devel
