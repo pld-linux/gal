@@ -15,6 +15,7 @@ Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
 Patch2:		%{name}-am15.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.2.12
@@ -25,7 +26,6 @@ BuildRequires:	libglade-devel >= 0.13
 BuildRequires:	libtool
 BuildRequires:	libunicode-devel
 BuildRequires:	libxml-devel
-BuildRequires:	xml-i18n-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgal19
 
