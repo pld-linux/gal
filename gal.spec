@@ -4,29 +4,16 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	0.22
+Version:	1.99.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/mirror/gnome.org/sources/gal/%{version}/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-no_version.patch
-Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
-Patch2:		%{name}-am15.patch
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.99/%{name}-%{version}.tar.bz2
 BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	gettext-devel
-BuildRequires:	gnome-libs-devel >= 1.2.12
-BuildRequires:	gnome-print-devel >= 0.28
-BuildRequires:	gnome-vfs-devel
-BuildRequires:	gtk+-devel
+BuildRequires:	libgnomeprint-devel >= 2.2.0
 BuildRequires:	intltool
-BuildRequires:	libglade-devel >= 0.13
-BuildRequires:	libglade-gnome-devel >= 0.13
-BuildRequires:	libtool
-BuildRequires:	libunicode-devel
-BuildRequires:	libxml-devel
-BuildRequires:	gdk-pixbuf-gnome-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgal19
 
@@ -108,21 +95,10 @@ Bibliotecas estАticas do gal.
 
 %prep
 %setup -q
-%patch0 -p1
-#%patch1 -p1
-%patch2 -p1
 
 %build
-sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
-mv -f configure.in.tmp configure.in
-rm -f missing
-%{__libtoolize}
-%{__gettextize}
-%{__aclocal} -I %{_aclocaldir}/gnome
-%{__autoconf}
-%{__automake}
 %configure \
-	--enable-static
+	--enable-static 
 %{__make}
 
 %install
@@ -131,30 +107,29 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name} --all-name
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files -f %{name}.lang
+%files 
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%{_datadir}/etable
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/glade
-%{_datadir}/%{name}/html
-%{_datadir}/%{name}/%{version}/pixmaps
+%attr(755,root,root) %{_libdir}/gtk-2.0/modules/lib*.so
+%{_libdir}/gtk-2.0/modules/lib*.la
+%dir %{_datadir}/%{name}-2.0
+%{_datadir}/%{name}-2.0/%{version}/glade
+%{_datadir}/%{name}-2.0/html
+%{_datadir}/%{name}-2.0/%{version}/pixmaps
+%{_pkgconfigdir}/gal-2.0.pc
 
 %files devel
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/*.sh
 %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_includedir}/%{name}
+%{_includedir}/%{name}-2.0
 
 %files static
 %defattr(644,root,root,755)
