@@ -1,4 +1,3 @@
-
 Summary:	GNOME Application Libs (GAL)
 Summary(ko):	GNOME 응용프로그램 라이브러리
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
@@ -138,7 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # shutup check-files
-rm -f $RPM_BUILD_ROOT/%{_libdir}/gtk-2.0/modules/lib*.{la,a}
+rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/lib*.{la,a}
 
 %find_lang %{name}-%{version}
 
