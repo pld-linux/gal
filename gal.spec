@@ -13,6 +13,7 @@ Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gal/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-no_version.patch
 Patch1:		%{name}-no_macros_in_AC_OUTPUT.patch
+Patch2:		%{name}-i18n.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
@@ -74,6 +75,7 @@ Biblioteki statyczne gal.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
