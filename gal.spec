@@ -15,6 +15,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.t
 # Source0-md5:	0eb17b023b6f1fe5793ad0680334c3b4
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-iconv-in-glibc.patch
+Patch2:		%{name}-gcc-3.4.patch
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -129,6 +130,7 @@ Bibliotecas estáticas do gal.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p0
 
 mv -f po/{no,nb}.po
 
