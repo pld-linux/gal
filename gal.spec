@@ -1,19 +1,16 @@
 
-%define _snap 20030425
-
 Summary:	GNOME Application Libs (GAL)
 Summary(pl):	Biblioteki Aplikacji GNOME (GAL)
 Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	1.99.3.99
-Release:	0.%{_snap}.1
+Version:	1.99.4
+Release:	0.1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-#Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.99/%{name}-%{version}.tar.bz2
-Source0: %{name}-%{version}-%{_snap}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.99/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-am17.patch
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -126,7 +123,7 @@ intltoolize --copy --force
 
 %configure \
 	--enable-static \
-	--enable-gtk-doc \
+	--disable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}/%{name}
 	
 %{__make}
@@ -136,6 +133,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# shutup check-files
+rm -f $RPM_BUILD_ROOT/%{_libdir}/gtk-2.0/modules/lib*.a
 
 %find_lang %{name}-%{version}
 
@@ -147,7 +147,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}-%{version}.lang
 %defattr(644,root,root,755)
-%doc announce* AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %attr(755,root,root) %{_libdir}/gtk-2.0/modules/lib*.so
 %{_libdir}/gtk-2.0/modules/lib*.la
