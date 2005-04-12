@@ -6,13 +6,13 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	2.4.1
+Version:	2.4.2
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gal/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	eded59870f5a0545761e7180349b0e99
+# Source0-md5:	70e07fde659f0553ba56caeae4f51908
 Patch0:		%{name}-iconv-in-glibc.patch
 Patch1:		%{name}-gcc-3.4.patch
 BuildRequires:	autoconf >= 2.52
@@ -23,11 +23,13 @@ BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	gtk-doc >= 1.3
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgnomeprintui-devel >= 2.10.0
-BuildRequires:	libgnomeui-devel >= 2.10.0
+BuildRequires:	libgnomeprintui-devel >= 2.10.2
+BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.197
+Requires(post,postun):	/sbin/ldconfig
 Obsoletes:	gal2
 Obsoletes:	libgal19
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -77,8 +79,8 @@ Summary(uk):	Б╕бл╕отеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	libglade2-devel >= 1:2.5.1
-Requires:	libgnomeprintui-devel >= 2.10.0
-Requires:	libgnomeui-devel >= 2.10.0
+Requires:	libgnomeprintui-devel >= 2.10.2
+Requires:	libgnomeui-devel >= 2.10.0-2
 Obsoletes:	gal2-devel
 Obsoletes:	libgal19-devel
 
@@ -131,8 +133,8 @@ Bibliotecas estАticas do gal.
 %patch1 -p0
 
 %build
-glib-gettextize --copy --force
-intltoolize --copy --force
+%{__glib_gettextize}
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
@@ -160,8 +162,11 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post
+%ldconfig_post
+
+%postun
+%ldconfig_postun
 
 %files -f %{name}-2.4.lang
 %defattr(644,root,root,755)
