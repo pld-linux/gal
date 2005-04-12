@@ -29,7 +29,6 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
-Requires(post,postun):	/sbin/ldconfig
 Obsoletes:	gal2
 Obsoletes:	libgal19
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
