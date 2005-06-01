@@ -28,6 +28,7 @@ BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
+BuildRequires:	popt-devel
 BuildRequires:	rpmbuild(macros) >= 1.197
 Obsoletes:	gal2
 Obsoletes:	libgal19
