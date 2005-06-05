@@ -6,13 +6,13 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	2.4.2
+Version:	2.4.3
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gal/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	70e07fde659f0553ba56caeae4f51908
+# Source0-md5:	de9ef290fd614a1057e26e31bc294142
 Patch0:		%{name}-iconv-in-glibc.patch
 Patch1:		%{name}-gcc-3.4.patch
 BuildRequires:	autoconf >= 2.52
@@ -29,6 +29,7 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
+Requires:	libgnomecanvas >= 2.10.2
 Obsoletes:	gal2
 Obsoletes:	libgal19
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
