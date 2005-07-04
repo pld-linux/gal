@@ -6,13 +6,13 @@ Summary(pt_BR):	G App Libs: Biblioteca para uso em aplicativos GNOME
 Summary(ru):	Библиотека для составных документов в GNOME
 Summary(uk):	Б╕бл╕отека для компонентних документ╕в в GNOME
 Name:		gal
-Version:	2.4.3
+Version:	2.5.3
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gal/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	de9ef290fd614a1057e26e31bc294142
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gal/2.5/%{name}-%{version}.tar.bz2
+# Source0-md5:	8fae770488887f9d0f95bcdbffc673cc
 Patch0:		%{name}-iconv-in-glibc.patch
 Patch1:		%{name}-gcc-3.4.patch
 BuildRequires:	autoconf >= 2.52
@@ -157,7 +157,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/lib*.{la,a}
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
-%find_lang %{name}-2.4
+%find_lang %{name}-2.6
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -165,11 +165,11 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files -f %{name}-2.4.lang
+%files -f %{name}-2.6.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%{_datadir}/gal-2.4
+%{_datadir}/gal-2.6
 
 %files devel
 %defattr(644,root,root,755)
