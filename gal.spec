@@ -1,10 +1,10 @@
 Summary:	GNOME Application Libs (GAL)
-Summary(es.UTF-8):   Bibliotecas de Aplicaciones de GNOME (GAL)
-Summary(ko.UTF-8):   GNOME 응용프로그램 라이브러리
-Summary(pl.UTF-8):   Biblioteki Aplikacji GNOME (GAL)
-Summary(pt_BR.UTF-8):   G App Libs: Biblioteca para uso em aplicativos GNOME
-Summary(ru.UTF-8):   Библиотека для составных документов в GNOME
-Summary(uk.UTF-8):   Бібліотека для компонентних документів в GNOME
+Summary(es.UTF-8):	Bibliotecas de Aplicaciones de GNOME (GAL)
+Summary(ko.UTF-8):	GNOME 응용프로그램 라이브러리
+Summary(pl.UTF-8):	Biblioteki Aplikacji GNOME (GAL)
+Summary(pt_BR.UTF-8):	G App Libs: Biblioteca para uso em aplicativos GNOME
+Summary(ru.UTF-8):	Библиотека для составных документов в GNOME
+Summary(uk.UTF-8):	Бібліотека для компонентних документів в GNOME
 Name:		gal
 Version:	2.4.3
 Release:	1
@@ -70,12 +70,12 @@ uma série de aplicações GNOME maiores.
 
 %package devel
 Summary:	gal header files and development documentation
-Summary(es.UTF-8):   Ficheros de cabecera y documentación de desarrollo para gal
-Summary(ko.UTF-8):   GAL 응용프로그램을 개발하기 위한 라이브러리와 헤더파일
-Summary(pl.UTF-8):   pliki nagłówkowe i dokumentacja gala
-Summary(pt_BR.UTF-8):   Arquivos de inclusão do gal
-Summary(ru.UTF-8):   Библиотеки и хедеры для gal
-Summary(uk.UTF-8):   Бібліотеки та хедери для gal
+Summary(es.UTF-8):	Ficheros de cabecera y documentación de desarrollo para gal
+Summary(ko.UTF-8):	GAL 응용프로그램을 개발하기 위한 라이브러리와 헤더파일
+Summary(pl.UTF-8):	pliki nagłówkowe i dokumentacja gala
+Summary(pt_BR.UTF-8):	Arquivos de inclusão do gal
+Summary(ru.UTF-8):	Библиотеки и хедеры для gal
+Summary(uk.UTF-8):	Бібліотеки та хедери для gal
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	libglade2-devel >= 1:2.5.1
@@ -108,9 +108,9 @@ o gal.
 
 %package static
 Summary:	gal static libraries
-Summary(es.UTF-8):   Bibliotecas estáticas de gal
-Summary(pl.UTF-8):   Biblioteki statyczne gala
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas do gal
+Summary(es.UTF-8):	Bibliotecas estáticas de gal
+Summary(pl.UTF-8):	Biblioteki statyczne gala
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas do gal
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 Obsoletes:	gal2-static
