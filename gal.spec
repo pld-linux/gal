@@ -17,7 +17,7 @@ Patch0:		%{name}-iconv-in-glibc.patch
 Patch1:		%{name}-gcc-3.4.patch
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	gtk-doc >= 1.3
