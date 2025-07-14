@@ -129,8 +129,8 @@ Bibliotecas estáticas do gal.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p0
+%patch -P0 -p1
+%patch -P1 -p0
 
 %build
 %{__glib_gettextize}
